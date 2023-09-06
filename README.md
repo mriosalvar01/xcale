@@ -2,6 +2,11 @@
 
 El controlador `Servicio Carrito de Compras` proporciona endpoints para administrar un Carrito de Compras.
 
+## Para probar el servicio - BD: Postgres
+
+### Query y Postman
+Ruta: /utilitarios
+
 ## Obtener todos los carros de compras
 
 ### Endpoint
