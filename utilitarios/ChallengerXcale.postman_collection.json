@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "d9cc21bb-20d1-46bf-a91e-f0d71bb9ef7d",
+		"name": "ChallengerXcale",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20150137",
+		"_collection_link": "https://www.postman.com/lunar-satellite-747231/workspace/xcale/collection/20150137-d9cc21bb-20d1-46bf-a91e-f0d71bb9ef7d?action=share&source=collection_link&creator=20150137"
+	},
+	"item": [
+		{
+			"name": "getAllShoppingCart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/shopping-cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"shopping-cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getShoppingCartByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/shopping-cart/e2e44515-e718-4533-a9a4-10739fb0dde7",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"shopping-cart",
+						"e2e44515-e718-4533-a9a4-10739fb0dde7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateShoppingCart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"shoppingCart\" : {\r\n        \"state\": \"1\"\r\n    },\r\n    \"shoppingCartDetail\": [\r\n            {\r\n                \"quantity\": 10,\r\n                \"product\": {\r\n                     \"idProduct\": 1,\r\n                     \"codProduct\": \"prod232\",\r\n                     \"name\": \"PRODUCT\",\r\n                     \"creationDate\": \"2023-08-08T00:00:00\",\r\n                     \"price\": 20.00,\r\n                     \"state\": \"1\"\r\n                }\r\n            },\r\n            {\r\n                \"quantity\": 5,\r\n                \"product\": {\r\n                     \"idProduct\": 2,\r\n                     \"codProduct\": \"prod238\",\r\n                     \"name\": \"PRODUCT2\",\r\n                     \"creationDate\": \"2023-08-08T00:00:00\",\r\n                     \"price\": 15.00,\r\n                     \"state\": \"1\"\r\n                }\r\n            }\r\n        ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/shopping-cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"shopping-cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addOrUpdateItem",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"codeShoppingCart\" : \"e2e44515-e718-4533-a9a4-10739fb0dde7\",\r\n    \"shoppingCartDetail\": \r\n            {\r\n                \"quantity\": 3,\r\n                \"product\": {\r\n                     \"idProduct\": 1,\r\n                     \"codProduct\": \"prod232\",\r\n                     \"name\": \"PRODUCT\",\r\n                     \"creationDate\": \"2023-08-08T00:00:00\",\r\n                     \"price\": 20.00,\r\n                     \"state\": \"1\"\r\n                }\r\n            }\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/shopping-cart/addOrUpdateItem",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"shopping-cart",
+						"addOrUpdateItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteShoppingCart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"codeShoppingCart\" : \"50c63837-7558-4438-a935-8c4f24be1cd4\",\r\n    \"shoppingCartDetail\": \r\n            {\r\n                \"quantity\": 10,\r\n                \"product\": {\r\n                     \"idProduct\": 1,\r\n                     \"codProduct\": \"prod232\",\r\n                     \"name\": \"PRODUCT\",\r\n                     \"creationDate\": \"2023-08-08T00:00:00\",\r\n                     \"price\": 20.00,\r\n                     \"state\": \"1\"\r\n                }\r\n            }\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/shopping-cart/f4390151-54a6-412d-82a5-6df1db29d31c",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"shopping-cart",
+						"f4390151-54a6-412d-82a5-6df1db29d31c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
