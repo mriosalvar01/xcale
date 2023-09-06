@@ -1,0 +1,19 @@
+{
+  "idShoppingCart": 15,
+  "codShoppingCard": "282af4c3-d717-4714-891e-0763fcc33816",
+  "total": 60.00,
+  "state": "1",
+  "detailsShoppingCart": [
+    {
+      "quantity": 3,
+      "product": {
+        "idProduct": 1,
+        "codProduct": "prod232",
+        "name": "PRODUCT",
+        "price": 20.00,
+        "state": "1"
+      },
+      "subTotalPrice": 60.00
+    }
+  ]
+}

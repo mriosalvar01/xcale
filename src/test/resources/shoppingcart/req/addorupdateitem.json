@@ -1,0 +1,16 @@
+{
+  "codeShoppingCart" : "282af4c3-d717-4714-891e-0763fcc33816",
+  "shoppingCartDetail":
+  {
+    "quantity": 3,
+    "product": {
+      "idProduct": 1,
+      "codProduct": "prod232",
+      "name": "PRODUCT",
+      "creationDate": null,
+      "price": 20.00,
+      "state": "1"
+    }
+  }
+
+}
