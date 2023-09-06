@@ -1,0 +1,276 @@
+[
+  {
+    "idShoppingCart": 1,
+    "codShoppingCard": "x23434",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 125.20,
+    "state": "1",
+    "detailsShoppingCart": [
+      {
+        "quantity": 10,
+        "subTotalPrice": 200.00,
+        "product": {
+          "idProduct": 1,
+          "codProduct": "prod232",
+          "name": "PRODUCT",
+          "creationDate": null,
+          "price": 20.00,
+          "state": "1"
+        }
+      },
+      {
+        "quantity": 10,
+        "subTotalPrice": 200.00,
+        "product": {
+          "idProduct": 1,
+          "codProduct": "prod232",
+          "name": "PRODUCT",
+          "creationDate": null,
+          "price": 20.00,
+          "state": "1"
+        }
+      }
+    ]
+  },
+  {
+    "idShoppingCart": 7,
+    "codShoppingCard": "6626c773-2d0f-4082-99f8-e6fa3a79312e",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 125.20,
+    "state": "1",
+    "detailsShoppingCart": []
+  },
+  {
+    "idShoppingCart": 8,
+    "codShoppingCard": "1e9b9146-241e-4fef-ab7f-6ef03bc90437",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 125.20,
+    "state": "1",
+    "detailsShoppingCart": []
+  },
+  {
+    "idShoppingCart": 9,
+    "codShoppingCard": "52ee075a-7391-4ef8-b1c4-1f26cfd5a8b2",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 125.20,
+    "state": "1",
+    "detailsShoppingCart": []
+  },
+  {
+    "idShoppingCart": 10,
+    "codShoppingCard": "bb9fb9e7-191a-41f0-9cd7-48ec03fa32eb",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 200.00,
+    "state": "1",
+    "detailsShoppingCart": []
+  },
+  {
+    "idShoppingCart": 11,
+    "codShoppingCard": "33172663-731b-46a1-86ef-4ff1096f1aa2",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 200.00,
+    "state": "1",
+    "detailsShoppingCart": []
+  },
+  {
+    "idShoppingCart": 13,
+    "codShoppingCard": "b57cbad7-bdc1-4b34-8a7a-17cbd73a6097",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 200.00,
+    "state": "1",
+    "detailsShoppingCart": [
+      {
+        "quantity": 10,
+        "subTotalPrice": 200.00,
+        "product": {
+          "idProduct": 1,
+          "codProduct": "prod232",
+          "name": "PRODUCT",
+          "creationDate": null,
+          "price": 20.00,
+          "state": "1"
+        }
+      }
+    ]
+  },
+  {
+    "idShoppingCart": 14,
+    "codShoppingCard": "d5283471-1e75-47d4-a6c1-528d6837cc68",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 200.00,
+    "state": "1",
+    "detailsShoppingCart": [
+      {
+        "quantity": 10,
+        "subTotalPrice": 200.00,
+        "product": {
+          "idProduct": 1,
+          "codProduct": "prod232",
+          "name": "PRODUCT",
+          "creationDate": null,
+          "price": 20.00,
+          "state": "1"
+        }
+      }
+    ]
+  },
+  {
+    "idShoppingCart": 15,
+    "codShoppingCard": "282af4c3-d717-4714-891e-0763fcc33816",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 200.00,
+    "state": "1",
+    "detailsShoppingCart": []
+  },
+  {
+    "idShoppingCart": 16,
+    "codShoppingCard": "b00ab9a8-d132-4d3a-8923-342ebc671cbc",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 200.00,
+    "state": "1",
+    "detailsShoppingCart": []
+  },
+  {
+    "idShoppingCart": 17,
+    "codShoppingCard": "e71b6214-fb0e-49a3-8868-d3d3feb8eb58",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 200.00,
+    "state": "1",
+    "detailsShoppingCart": []
+  },
+  {
+    "idShoppingCart": 18,
+    "codShoppingCard": "25568d6b-2ddc-4f4d-800a-abc7036400c2",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 200.00,
+    "state": "1",
+    "detailsShoppingCart": [
+      {
+        "quantity": 10,
+        "subTotalPrice": 200.00,
+        "product": {
+          "idProduct": 1,
+          "codProduct": "prod232",
+          "name": "PRODUCT",
+          "creationDate": null,
+          "price": 20.00,
+          "state": "1"
+        }
+      }
+    ]
+  },
+  {
+    "idShoppingCart": 19,
+    "codShoppingCard": "cb16a58c-2db4-4fa7-a12f-b4b8633344e4",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 275.00,
+    "state": "1",
+    "detailsShoppingCart": [
+      {
+        "quantity": 10,
+        "subTotalPrice": 200.00,
+        "product": {
+          "idProduct": 1,
+          "codProduct": "prod232",
+          "name": "PRODUCT",
+          "creationDate": null,
+          "price": 20.00,
+          "state": "1"
+        }
+      },
+      {
+        "quantity": 5,
+        "subTotalPrice": 75.00,
+        "product": {
+          "idProduct": 2,
+          "codProduct": "prod238",
+          "name": "PRODUCT2",
+          "creationDate": null,
+          "price": 15.00,
+          "state": "1"
+        }
+      }
+    ]
+  },
+  {
+    "idShoppingCart": 20,
+    "codShoppingCard": "89bbf01e-457d-461e-ae80-05efdb57c4fc",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 275.00,
+    "state": "1",
+    "detailsShoppingCart": [
+      {
+        "quantity": 10,
+        "subTotalPrice": 200.00,
+        "product": {
+          "idProduct": 1,
+          "codProduct": "prod232",
+          "name": "PRODUCT",
+          "creationDate": null,
+          "price": 20.00,
+          "state": "1"
+        }
+      },
+      {
+        "quantity": 5,
+        "subTotalPrice": 75.00,
+        "product": {
+          "idProduct": 2,
+          "codProduct": "prod238",
+          "name": "PRODUCT2",
+          "creationDate": null,
+          "price": 15.00,
+          "state": "1"
+        }
+      }
+    ]
+  },
+  {
+    "idShoppingCart": 12,
+    "codShoppingCard": "50c63837-7558-4438-a935-8c4f24be1cd4",
+    "creationDate": null,
+    "eventDate": null,
+    "total": 275.00,
+    "state": "1",
+    "detailsShoppingCart": [
+      {
+        "quantity": 10,
+        "subTotalPrice": 200.00,
+        "product": {
+          "idProduct": 1,
+          "codProduct": "prod232",
+          "name": "PRODUCT",
+          "creationDate": null,
+          "price": 20.00,
+          "state": "1"
+        }
+      },
+      {
+        "quantity": 5,
+        "subTotalPrice": 75.00,
+        "product": {
+          "idProduct": 2,
+          "codProduct": "prod238",
+          "name": "PRODUCT2",
+          "creationDate": null,
+          "price": 15.00,
+          "state": "1"
+        }
+      }
+    ]
+  }
+]
