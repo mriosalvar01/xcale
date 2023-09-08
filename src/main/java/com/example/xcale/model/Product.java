@@ -1,4 +1,5 @@
 package com.example.xcale.model;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 

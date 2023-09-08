@@ -1,9 +1,6 @@
 package com.example.xcale.rest;
 
-import com.example.xcale.dto.AddItemShoppingCart;
-import com.example.xcale.dto.CreateShoppingCartRequest;
-import com.example.xcale.dto.CreateShoppingCartResponse;
-import com.example.xcale.dto.DeleteShoppingCartResponse;
+import com.example.xcale.dto.*;
 import com.example.xcale.model.ShoppingCart;
 import com.example.xcale.services.ShoppingCartService;
 import com.example.xcale.util.ConvertJsonToBean;
@@ -31,19 +28,24 @@ class ShoppingCartControllerTest {
 
     @Test
     void getAllShoppingCart() throws IOException {
-        List<ShoppingCart> shoppingCarts = ConvertJsonToBean
-                .getListFromJsonFile("src/test/resources/shoppingcart/resp/listshoppingcart.json", ShoppingCart.class);
+        List<ShoppingCartResponse> shoppingCarts = ConvertJsonToBean
+                .getListFromJsonFile("src/test/resources/shoppingcart/resp/listshoppingcart.json",
+                        ShoppingCartResponse.class);
+
         when(shoppingCartService.getAllShoppingCart()).thenReturn(shoppingCarts);
-        List<ShoppingCart> result = shoppingCartController.getAllShoppingCart();
+        List<ShoppingCartResponse> result = shoppingCartController.getAllShoppingCart();
         assertEquals(shoppingCarts, result);
     }
 
     @Test
     void getShoppingCartByCode() throws IOException {
-        ShoppingCart shoppingCart = ConvertJsonToBean
-                .getBeanFromJsonFile("src/test/resources/shoppingcart/resp/shoppingcart.json", ShoppingCart.class);
+        ShoppingCartResponse shoppingCart = ConvertJsonToBean
+                .getBeanFromJsonFile("src/test/resources/shoppingcart/resp/shoppingcart.json",
+                        ShoppingCartResponse.class);
+
+
         when(shoppingCartService.getShoppingCartByCode(anyString())).thenReturn(shoppingCart);
-        ShoppingCart result = shoppingCartController.getShoppingCartByCode("123");
+        ShoppingCartResponse result = shoppingCartController.getShoppingCartByCode("123");
         assertEquals(shoppingCart, result);
     }
 
