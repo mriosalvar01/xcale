@@ -1,15 +1,13 @@
 package com.example.xcale.services.impl;
 
-import com.example.xcale.dto.AddItemShoppingCart;
-import com.example.xcale.dto.CreateShoppingCartRequest;
-import com.example.xcale.dto.CreateShoppingCartResponse;
-import com.example.xcale.dto.DeleteShoppingCartResponse;
+import com.example.xcale.dto.*;
 import com.example.xcale.model.ShoppingCart;
 import com.example.xcale.model.ShoppingCartDetail;
 import com.example.xcale.model.ShoppingCartID;
 import com.example.xcale.repository.ShoppingCartDetailRepository;
 import com.example.xcale.repository.ShoppingCartRepository;
 import com.example.xcale.services.ShoppingCartService;
+import com.example.xcale.util.ShoppingCartMapper;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -18,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
@@ -31,16 +30,18 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
-    public List<ShoppingCart> getAllShoppingCart() {
-        return shoppingCartRepository.findAll();
+    public List<ShoppingCartResponse> getAllShoppingCart() {
+        return shoppingCartRepository.findAll()
+                .stream()
+                .map(ShoppingCartMapper::convertToShoppingCartResponse)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public ShoppingCart getShoppingCartByCode(String code) {
+    public ShoppingCartResponse getShoppingCartByCode(String code) {
         ShoppingCart shopingCart = shoppingCartRepository.findByCodShoppingCard(code);
         shopingCart.setEventDate(LocalDateTime.now());
-        shoppingCartRepository.save(shopingCart);
-        return shopingCart;
+        return ShoppingCartMapper.convertToShoppingCartResponse(shoppingCartRepository.save(shopingCart));
     }
 
     @Override

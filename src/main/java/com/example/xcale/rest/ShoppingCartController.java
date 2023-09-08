@@ -1,9 +1,6 @@
 package com.example.xcale.rest;
 
-import com.example.xcale.dto.AddItemShoppingCart;
-import com.example.xcale.dto.CreateShoppingCartRequest;
-import com.example.xcale.dto.CreateShoppingCartResponse;
-import com.example.xcale.dto.DeleteShoppingCartResponse;
+import com.example.xcale.dto.*;
 import com.example.xcale.model.ShoppingCart;
 import com.example.xcale.services.ShoppingCartService;
 import org.springframework.web.bind.annotation.*;
@@ -22,12 +19,12 @@ public class ShoppingCartController {
     }
 
     @GetMapping(value = "")
-    public List<ShoppingCart> getAllShoppingCart() {
+    public List<ShoppingCartResponse> getAllShoppingCart() {
         return shoppingCartService.getAllShoppingCart();
     }
 
     @GetMapping(value = "/{code}")
-    public ShoppingCart getShoppingCartByCode(@PathVariable(value = "code") String code) {
+    public ShoppingCartResponse getShoppingCartByCode(@PathVariable(value = "code") String code) {
         return shoppingCartService.getShoppingCartByCode(code);
     }
 

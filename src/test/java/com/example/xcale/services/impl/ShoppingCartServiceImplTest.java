@@ -1,9 +1,7 @@
 package com.example.xcale.services.impl;
 
-import com.example.xcale.dto.AddItemShoppingCart;
-import com.example.xcale.dto.CreateShoppingCartRequest;
-import com.example.xcale.dto.CreateShoppingCartResponse;
-import com.example.xcale.dto.DeleteShoppingCartResponse;
+import com.example.xcale.dto.*;
+import com.example.xcale.model.Product;
 import com.example.xcale.model.ShoppingCart;
 import com.example.xcale.model.ShoppingCartDetail;
 import com.example.xcale.repository.ShoppingCartDetailRepository;
@@ -16,6 +14,9 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -37,24 +38,49 @@ class ShoppingCartServiceImplTest {
 
 
     @Test
-    void getAllShoppingCart() throws IOException {
-        List<ShoppingCart> shoppingCarts = ConvertJsonToBean
-                .getListFromJsonFile("src/test/resources/shoppingcart/resp/listshoppingcart.json", ShoppingCart.class);
+    void getAllShoppingCart() {
+
+        List<ShoppingCart> shoppingCarts = new ArrayList<>();
+        ShoppingCart item = new ShoppingCart();
+        item.setCodShoppingCard("UIDD");
+        List<ShoppingCartDetail> detail = new ArrayList<>();
+        Product p = new Product();
+        p.setPrice(BigDecimal.ONE);
+        ShoppingCartDetail itemDetail = new ShoppingCartDetail(item, p, 1);
+
+        detail.add(itemDetail);
+        item.setDetailsShoppingCart(detail);
+        shoppingCarts.add(item);
         when(shoppingCartRepository.findAll()).thenReturn(shoppingCarts);
-        List<ShoppingCart> result = shoppingCartService.getAllShoppingCart();
+        List<ShoppingCartResponse> result = shoppingCartService.getAllShoppingCart();
         assertTrue(result.size() != 0);
         assertTrue(result.stream().noneMatch(shoppingCart -> shoppingCart.getCodShoppingCard().isEmpty()));
-        assertEquals(shoppingCarts, result);
+        assertEquals(1, result.size());
     }
 
     @Test
     void getShoppingCartByCode() throws IOException {
-        ShoppingCart shoppingCart = ConvertJsonToBean
-                .getBeanFromJsonFile("src/test/resources/shoppingcart/resp/shoppingcart.json", ShoppingCart.class);
-        when(shoppingCartRepository.findByCodShoppingCard(anyString())).thenReturn(shoppingCart);
-        ShoppingCart result = shoppingCartService.getShoppingCartByCode("code");
-        assertTrue(!shoppingCart.getCodShoppingCard().isEmpty());
-        assertEquals(shoppingCart, result);
+
+        ShoppingCart item = new ShoppingCart();
+        item.setCodShoppingCard("UIDD");
+        item.setIdShoppingCart(1);
+        item.setCreationDate(LocalDateTime.now());
+        item.setEventDate(LocalDateTime.now());
+        item.setTotal(BigDecimal.ONE);
+        item.setState("1");
+        List<ShoppingCartDetail> detail = new ArrayList<>();
+        Product p = new Product();
+        p.setPrice(BigDecimal.ONE);
+        ShoppingCartDetail itemDetail = new ShoppingCartDetail(item, p, 1);
+        detail.add(itemDetail);
+        item.setDetailsShoppingCart(detail);
+
+        when(shoppingCartRepository.findByCodShoppingCard(anyString())).thenReturn(item);
+        when(shoppingCartRepository.save(any())).thenReturn(item);
+
+        ShoppingCartResponse result = shoppingCartService.getShoppingCartByCode("code");
+        assertTrue(!item.getCodShoppingCard().isEmpty());
+        assertEquals(item.getCodShoppingCard(), result.getCodShoppingCard());
     }
 
     @Test
@@ -73,17 +99,28 @@ class ShoppingCartServiceImplTest {
         assertEquals(createShoppingCartResponse.getCode(), result.getCode());
     }
 
-    @Disabled
     @Test
     void addItemsShoppingCart() throws IOException {
         AddItemShoppingCart addItemShoppingCart = ConvertJsonToBean
                 .getBeanFromJsonFile("src/test/resources/shoppingcart/req/addorupdateitem.json",
                         AddItemShoppingCart.class);
-        ShoppingCart shoppingCart = ConvertJsonToBean
-                .getBeanFromJsonFile("src/test/resources/shoppingcart/resp/shoppingcart.json", ShoppingCart.class);
+        ShoppingCart item = new ShoppingCart();
+        item.setCodShoppingCard("UIDD");
+        item.setIdShoppingCart(1);
+        item.setCreationDate(LocalDateTime.now());
+        item.setEventDate(LocalDateTime.now());
+        item.setTotal(BigDecimal.ONE);
+        item.setState("1");
+        List<ShoppingCartDetail> detail = new ArrayList<>();
+        Product p = new Product();
+        p.setPrice(BigDecimal.ONE);
+        ShoppingCartDetail itemDetail = new ShoppingCartDetail(item, p, 1);
+        detail.add(itemDetail);
+        item.setDetailsShoppingCart(detail);
+
         CreateShoppingCartResponse createShoppingCartResponse =
                 new CreateShoppingCartResponse("282af4c3-d717-4714-891e-0763fcc33816", "message","00");
-        when(shoppingCartRepository.findByCodShoppingCard(anyString())).thenReturn(shoppingCart);
+        when(shoppingCartRepository.findByCodShoppingCard(anyString())).thenReturn(item);
         when(shoppingCartDetailRepository.findByShoppingCartID(any())).thenReturn(List.of());
         when(shoppingCartDetailRepository.save(any())).thenReturn(new ShoppingCartDetail());
         when(shoppingCartDetailRepository.saveAll(any())).thenReturn(List.of());
