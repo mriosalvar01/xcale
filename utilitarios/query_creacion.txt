@@ -1,0 +1,35 @@
+CREATE TABLE shopping_cart (
+    idShoppingCart SERIAL PRIMARY KEY,
+    codShoppingCard VARCHAR(45) unique not null,
+    creationDate TIMESTAMP,
+    total DECIMAL(10,2),
+    state char(1),
+    eventdate TIMESTAMP
+);   
+
+
+CREATE TABLE product (
+    idProduct SERIAL PRIMARY KEY,
+    codProduct VARCHAR(45) unique not null,
+    name VARCHAR(80),
+    creationDate TIMESTAMP,
+    price DECIMAL(10,2),
+    state char(1)
+); 
+
+CREATE TABLE shopping_cart_detail (
+    idShoppingCart int,
+    idProduct int,
+    quantity int,
+    CONSTRAINT fk_detail_shopping FOREIGN KEY (idShoppingCart) REFERENCES shopping_cart(idShoppingCart),
+    CONSTRAINT fk_detail_product FOREIGN KEY (idProduct) REFERENCES product(idProduct)
+);  
+
+
+INSERT INTO public.product
+(codproduct, "name", creationdate, price, state)
+VALUES('PRD001','Producto 1', now(), 10.5, '1');
+
+INSERT INTO public.product
+(codproduct, "name", creationdate, price, state)
+VALUES('PRD002','Producto 2', now(), 7.5, '1');

@@ -1,0 +1,29 @@
+{
+  "shoppingCart" : {
+    "state": "1"
+  },
+  "shoppingCartDetail": [
+    {
+      "quantity": 10,
+      "product": {
+        "idProduct": 1,
+        "codProduct": "prod232",
+        "name": "PRODUCT",
+        "creationDate": null,
+        "price": 20.00,
+        "state": "1"
+      }
+    },
+    {
+      "quantity": 5,
+      "product": {
+        "idProduct": 2,
+        "codProduct": "prod238",
+        "name": "PRODUCT2",
+        "creationDate": null,
+        "price": 15.00,
+        "state": "1"
+      }
+    }
+  ]
+}
